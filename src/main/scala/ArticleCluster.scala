@@ -1,4 +1,7 @@
 package com.under_hair.topicwords
+
+import org.apache.mahout.math.Vector
+
 /**
  * Created with IntelliJ IDEA.
  * User: mastakeu
@@ -6,7 +9,7 @@ package com.under_hair.topicwords
  * Time: 17:55
  * To change this template use File | Settings | File Templates.
  */
-case class ArticleCluster(clusterId: String) {
+case class ArticleCluster(clusterId: String, vector: Vector) {
   private var _articles = Map[String,Article]()
   private var _words = Map[String,List[Article]]()
   def add(a: Article):Boolean = {

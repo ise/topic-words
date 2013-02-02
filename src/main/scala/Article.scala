@@ -1,5 +1,7 @@
 package com.under_hair.topicwords
 
+import org.apache.mahout.math.Vector
+
 /**
  * Created with IntelliJ IDEA.
  * User: mastakeu
@@ -9,5 +11,10 @@ package com.under_hair.topicwords
  */
 case class Article(articleId: String, createTime: Long, words: List[String]) {
   val T = 60 * 60 * 12
+  var vector:Vector = null
+  def this(articleId: String, createTime: Long, words: List[String], vec: Vector) = {
+    this(articleId, createTime, words)
+    vector = vec
+  }
   def freshness(now: Long) = math.exp((createTime - now).toDouble / T.toDouble)
 }

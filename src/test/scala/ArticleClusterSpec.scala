@@ -14,7 +14,7 @@ import org.joda.time.DateTime
 //DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").parseDateTime("2013-01-01")
 class ArticleClusterSpec extends Specification {
   val dt = new DateTime
-  val articleCluster = new ArticleCluster("C-01")
+  val articleCluster = new ArticleCluster("C-01", null)
   val article1 = new Article(
     "article01",
     dt.minusDays(1).getMillis / 1000,
@@ -33,7 +33,7 @@ class ArticleClusterSpec extends Specification {
 
   "ArticleCluster" should {
     "clusterId test" in {
-      articleCluster.clusterId must beEqualTo("C-01")
+      articleCluster.clusterId must beEqualTo("C-01", null)
     }
     "add test" in new scope {
       //articleCluster.add(article1) & articleCluster.add(article2) must beTrue
