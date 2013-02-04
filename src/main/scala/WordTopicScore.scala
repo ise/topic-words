@@ -1,3 +1,4 @@
+package com.under_hair.topicwords
 /**
  * Created with IntelliJ IDEA.
  * User: mastakeu
@@ -5,6 +6,4 @@
  * Time: 17:56
  * To change this template use File | Settings | File Templates.
  */
-class WordTopicScore {
-
-}
+case class WordTopicScore(word: String, score: Double)
